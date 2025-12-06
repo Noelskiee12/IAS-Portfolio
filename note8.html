@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Notes - Email Security</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Notes</a>
+    <a href="contact.html">Contact Info</a>
+</nav>
+
+<div class="note-content">
+
+    <img src="images/note8.jpg" alt="Note1">
+
+    <h1>AIS NOTES</h1>
+
+    <h2>EMAIL SECURITY FUNDAMENTALS</h2>
+
+    <h3>What is Email?</h3>
+    <p>— Email is the digital exchange of messages over a network. It works through servers and protocols like SMTP, DNS, MX, and user inbox systems.</p>
+
+    <h3>How Email Works (Simple Flow)</h3>
+    <p>— Compose (email client)</p>
+    <p>— Send via SMTP server</p>
+    <p>— DNS lookup finds destination mail server</p>
+    <p>— MX server receives</p>
+    <p>— Delivered to recipient’s inbox</p>
+
+    <h3>Core Email Security Principles</h3>
+    <p>— Confidentiality: Only authorized users can read emails.</p>
+    <p>— Integrity: Prevents tampering.</p>
+    <p>— Availability: Email must be accessible.</p>
+    <p>— Authentication: Verifies the sender.</p>
+    <p>— Non-repudiation: Sender cannot deny sending the email.</p>
+
+    <h3>Email Encryption</h3>
+    <p>— Protects sensitive information and prevents unauthorized access.</p>
+    <p>— Secures data in transit and at rest.</p>
+    <p>— Helps with compliance and trust.</p>
+
+    <h3>S/MIME (Secure/Multipurpose Internet Mail Extensions)</h3>
+    <p>— Uses digital certificates issued by trusted CAs.</p>
+    <p>— Provides encryption (confidentiality) and digital signatures (authenticity + integrity).</p>
+    <p>— Built into major email clients (Outlook, Apple Mail, Thunderbird).</p>
+
+    <h3>OpenPGP</h3>
+    <p>— Open-source email encryption standard.</p>
+    <p>— Uses public/private key pairs, with users managing their own keys.</p>
+    <p>— Works across all platforms, ideal for individuals or privacy-focused users.</p>
+
+    <h3>S/MIME vs OpenPGP (Quick Comparison)</h3>
+    <p>— Trust Model: S/MIME → CA-based hierarchy; OpenPGP → Web of Trust / keyservers</p>
+    <p>— Key Management: S/MIME → Centralized; OpenPGP → User-controlled</p>
+    <p>— Ease of Use: S/MIME → More complex; OpenPGP → Generally easier</p>
+    <p>— Best For: S/MIME → Enterprises; OpenPGP → Individuals / webmail users</p>
+    <p>— Both support encryption and digital signatures.</p>
+
+    <h3>Common Email Threats</h3>
+    <p>— Phishing: Generic deception</p>
+    <p>— Spear phishing: Targeted attacks</p>
+    <p>— Malware: Attachments or links</p>
+    <p>— Email spoofing: Fake sender identity</p>
+    <p>— BEC (Business Email Compromise): Fraud via compromised accounts</p>
+    <p>— Social engineering: Psychological manipulation</p>
+    <p>— Zero-day attacks: Exploit unknown vulnerabilities</p>
+
+    <h3>Email Header Analysis</h3>
+    <p>— Used to verify sender authenticity and detect spoofing.</p>
+    <p>Key Authentication Mechanisms:</p>
+    <p>— SPF: Validates sending IP address</p>
+    <p>— DKIM: Cryptographic signature verification</p>
+    <p>— DMARC: Policy + reporting for SPF/DKIM failures</p>
+    <p>— Header checks help reveal fake or malicious emails.</p>
+
+    <h3>Message Header Analyzer Tool</h3>
+    <p>— Converts complex headers into readable format.</p>
+    <p>— Shows SPF/DKIM/DMARC pass/fail.</p>
+    <p>— Displays all server hops.</p>
+    <p>— Great for quick phishing analysis.</p>
+
+    <h3>REMnux Platform (For Malware & Email Analysis)</h3>
+    <p>— A Linux toolkit for examining malicious email artifacts.</p>
+    <p>— Tools include:</p>
+    <p><code>emldump</code> – Analyze .eml files</p>
+    <p><code>msg-extractor</code> – Extract .msg email files</p>
+    <p><code>msgconvert</code> – Convert MSG → MBOX</p>
+    <p><code>mail-parser</code> – Parse raw email content</p>
+
+</div>
+
+</body>
+</html>

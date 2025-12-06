@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Notes - CWE-79 XSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Notes</a>
+    <a href="contact.html">Contact Info</a>
+</nav>
+
+<div class="note-content">
+
+    <img src="images/note5.jpg" alt="Note1">
+
+    <h1>AIS NOTES</h1>
+
+    <h2>CWE-79: CROSS-SITE SCRIPTING (XSS)</h2>
+    <p>— Client-side code injection where attackers run malicious scripts in users’ browsers, stealing cookies, session tokens, or performing actions on behalf of victims.</p>
+
+    <h2>TYPES OF XSS ATTACKS</h2>
+
+    <h3>Reflected XSS (Non-Persistent / Type 1)</h3>
+    <p>— Payload is sent in a request (URL/form) and immediately reflected in the response.</p>
+    <p>Example: search page echoes <code>?q=&lt;script&gt;…&lt;/script&gt;</code></p>
+
+    <h3>Stored XSS (Persistent / Type 2)</h3>
+    <p>— Malicious script is saved on the server (comments, profiles) and served to all users later, enabling widespread exploitation whenever content is viewed.</p>
+
+    <h3>DOM-Based XSS (Type 0)</h3>
+    <p>— Vulnerability arises from insecure client-side JavaScript that writes attacker-controlled data into the DOM without server-side involvement.</p>
+    <p>Example: <code>location.hash</code> used unsafely</p>
+
+    <h3>Universal XSS (uXSS)</h3>
+    <p>— Browser or plugin-level flaw allowing persistent script execution across sites, bypassing site-specific protections and affecting many pages/users.</p>
+
+    <h3>Self-XSS</h3>
+    <p>— Social-engineering attack where users are tricked into pasting malicious code into their browser console, executing attacker scripts in their own session.</p>
+
+    <h2>ATTACK CONSEQUENCES</h2>
+    <p>— Session Hijacking / Account Takeover: Attackers steal cookies or session tokens, allowing them to log in as victims and fully control accounts.</p>
+    <p>— Data Theft / Information Exposure: Sensitive user data (emails, messages, tokens) can be read and sent to an attacker’s server.</p>
+    <p>— Phishing and Credential Theft: Fake login forms or pop-ups trick users into entering their usernames and passwords.</p>
+    <p>— Unauthorized Actions (CSRF-like Attacks): Malicious scripts perform actions like sending messages, transferring funds, or changing passwords as the victim.</p>
+    <p>— Malware Distribution / Redirects: Attackers inject code that redirects users to malicious websites or downloads harmful files.</p>
+    <p>— Financial and Reputational Damage: Stolen data, fraud, and public exposure cause loss of trust, financial loss, and possible legal penalties.</p>
+
+    <h2>PREVENTION STRATEGIES</h2>
+    <p>— Output-encode/escape contexts (HTML, JS, URL), use Content Security Policy, validate/whitelist inputs, sanitize user content, use frameworks that auto-escape, and minimize client-side DOM sinks.</p>
+
+    <h3>Session Hijacking</h3>
+    <p>— Use HttpOnly cookies and Content Security Policy (CSP).</p>
+
+    <h3>Data Theft</h3>
+    <p>— Validate and escape all user input.</p>
+
+    <h3>Phishing</h3>
+    <p>— Don’t display raw user input; auto-escape output.</p>
+
+    <h3>Unauthorized Actions</h3>
+    <p>— Use CSRF tokens and input validation.</p>
+
+    <h3>Malware Redirects</h3>
+    <p>— Block inline scripts and limit script sources (CSP).</p>
+
+    <h3>Financial Damage</h3>
+    <p>— Follow secure coding practices, test often, and patch quickly.</p>
+
+</div>
+
+</body>
+</html>

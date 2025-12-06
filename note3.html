@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Notes - CWE-78 OS Command Injection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Notes</a>
+    <a href="contact.html">Contact Info</a>
+</nav>
+
+<div class="note-content">
+
+    <img src="images/note3.jpg" alt="Note1">
+
+    <h1>AIS NOTES</h1>
+
+    <h2>CWE-78: OS COMMAND INJECTION</h2>
+    <p>— An attacker injects malicious shell commands into an application that runs system commands, enabling remote code execution, data theft, or system compromise.</p>
+    <p>Example: <code>; rm -rf /</code>, <code>&& nc -e /bin/sh</code></p>
+
+    <h2>ATTACK MECHANISM</h2>
+    <p>— Attackers use shell metacharacters (<code>;</code>, <code>&&</code>, <code>|</code>, <code>`</code>, <code>$()</code>, <code>&gt;</code>, <code>&lt;</code>) to terminate or chain commands or perform redirection, turning benign input into executable OS commands.</p>
+    <p>Example: <code>user; malicious</code></p>
+
+    <h2>MAIN ATTACK VARIANTS</h2>
+
+    <h3>Direct Injection</h3>
+    <p>— User input executed immediately.</p>
+
+    <h3>Blind Injection</h3>
+    <p>— No output, attacker infers success via timing.</p>
+
+    <h3>Chained/Piped</h3>
+    <p>— Combine commands using <code>|</code> or <code>&&</code>.</p>
+
+    <h3>Second-Order Injection</h3>
+    <p>— Stored input executes later when triggered.</p>
+
+    <h2>MITIGATION STRATEGIES</h2>
+
+    <p>— Use allow lists and avoid direct shell invocation.</p>
+    <p>— Use safe APIs (parameterized exec libraries).</p>
+    <p>— Escape inputs and validate/normalize input.</p>
+    <p>— Enforce least privilege and run services in isolated containers/VMs.</p>
+    <p>— Example: call command APIs with argument arrays instead of a shell string.</p>
+
+</div>
+
+</body>
+</html>

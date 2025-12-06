@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Notes - CWE-35 Path Traversal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Notes</a>
+    <a href="contact.html">Contact Info</a>
+</nav>
+
+<div class="note-content">
+
+    <img src="images/note6.jpg" alt="Note1">
+
+    <h1>AIS NOTES</h1>
+
+    <h2>CWE-35: PATH TRAVERSAL</h2>
+    <p>— A security vulnerability where attackers access files or directories outside the intended folder. This happens when applications build file paths using unsanitized user input. Attackers use sequences like <code>../</code> or encoded versions to escape restricted directories.</p>
+
+    <h2>HOW FILE SYSTEMS WORK</h2>
+    <p>— File systems form a tree structure.</p>
+    <p><code>.</code> = current directory</p>
+    <p><code>..</code> = parent directory</p>
+    <p>— Attackers exploit <code>..</code> to move upward in the file system.</p>
+
+    <h2>DIRECTORY TRAVERSAL ATTACK BASICS</h2>
+    <p>— Attacker provides malicious file path input.</p>
+    <p>— Application uses this input to build a file path.</p>
+    <p>— Missing or weak validation allows navigation outside the safe directory.</p>
+    <p>Example: <code>/safedir/../etc/passwd → /etc/passwd</code></p>
+
+    <h2>ATTACK TECHNIQUES</h2>
+    <p>— Simple: <code>../</code></p>
+    <p>— Alternate separators: <code>/</code>, <code>\</code></p>
+    <p>— Encoded: <code>%2e%2e%2f</code>, <code>%252e%252e%252f</code></p>
+    <p>— Unicode: <code>%u002e%u002e%u002f</code></p>
+    <p>— Mangled paths: <code>....//...</code></p>
+    <p>— NULL byte injection: <code>%00</code></p>
+
+    <h2>CONSEQUENCES</h2>
+    <p>— Unauthorized access to sensitive files (config, passwords, source code).</p>
+    <p>— File modification or deletion → system disruption.</p>
+    <p>— Further attacks: information gathered may lead to full system compromise.</p>
+
+    <h2>PREVENTION METHODS</h2>
+    <p>— Validate & sanitize input (allowlist approach).</p>
+    <p>— Allowlist files/directories explicitly.</p>
+    <p>— Do not use user input directly in file system paths.</p>
+    <p>— Use path normalization to remove traversal sequences.</p>
+    <p>— Apply least privilege access to file systems.</p>
+    <p>— Use isolated environments like containers or chroot.</p>
+
+    <h2>TOOLS FOR DETECTION</h2>
+    <p>— Burp Suite</p>
+    <p>— OWASP ZAP</p>
+    <p>— Nikto</p>
+    <p>— DotDotPwn</p>
+    <p>— Metasploit</p>
+    <p>— DirBuster</p>
+
+</div>
+
+</body>
+</html>

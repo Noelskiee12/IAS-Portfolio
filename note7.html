@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Notes - Network Traffic Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Notes</a>
+    <a href="contact.html">Contact Info</a>
+</nav>
+
+<div class="note-content">
+
+    <img src="images/note7.jpg" alt="Note1">
+
+    <h1>AIS NOTES</h1>
+
+    <h2>NETWORK TRAFFIC ANALYSIS</h2>
+    <p>— The process of capturing, inspecting, and analyzing data flow across a network. Helps identify common protocols, baseline activity, anomalies, and threats.</p>
+
+    <h2>OSI MODEL (QUICK PRIMER)</h2>
+    <p>L7 – Application: HTTP, FTP</p>
+    <p>L6 – Presentation: SSL, TLS</p>
+    <p>L5 – Session: Connection management</p>
+    <p>L4 – Transport: TCP, UDP</p>
+    <p>L3 – Network: IP, routing</p>
+    <p>L2 – Data Link: Ethernet frames</p>
+
+    <h2>PURPOSES OF TRAFFIC ANALYSIS</h2>
+    <p>— Understand and characterize ports & protocols used.</p>
+    <p>— Establish a normal baseline for the network.</p>
+    <p>— Detect, monitor, and respond to threats or anomalies.</p>
+    <p>— Gain deep insight into network behavior.</p>
+
+    <h2>COMMON TOOLS</h2>
+    <p>— tcpdump – CLI packet capture</p>
+    <p>— Tshark – CLI version of Wireshark</p>
+    <p>— Wireshark – GUI packet analyzer (most used)</p>
+    <p>— NGrep – Pattern matching for packets</p>
+    <p>— tcpick – TCP stream monitoring</p>
+    <p>— Network Taps & SPAN Ports – Copy traffic for analysis</p>
+
+    <h2>TRAFFIC ANALYSIS PROCESS</h2>
+    <p>— Ingest Traffic – Capture data (with optional filters).</p>
+    <p>— Reduce Noise – Filter out unnecessary packets.</p>
+    <p>— Analyze & Explore – Focus on relevant packets.</p>
+    <p>— Detect & Alert – Identify malicious vs. normal traffic.</p>
+
+    <h2>TYPES OF ANALYSIS</h2>
+    <p>— Descriptive: Summaries of traffic.</p>
+    <p>— Diagnostic: Cause/effect relationships.</p>
+    <p>— Predictive: Forecast future behavior.</p>
+    <p>— Prescriptive: Recommend actions to prevent issues.</p>
+
+    <h2>WIRESHARK ESSENTIALS</h2>
+    <h3>Interface</h3>
+    <p>— Packet List (Orange): Overview</p>
+    <p>— Packet Details (Blue): Protocol breakdown</p>
+    <p>— Packet Bytes (Green): Raw hex/ASCII data</p>
+
+    <h3>Packet Structure</h3>
+    <p>— Frame (Layer 2)</p>
+    <p>— Ethernet (Layer 2)</p>
+    <p>— IP (Layer 3)</p>
+    <p>— TCP/UDP (Layer 4)</p>
+    <p>— Data (Layer 7)</p>
+
+    <h3>Filters</h3>
+    <p>— Capture Filters: Apply before capturing → reduces data</p>
+    <p>Example: <code>tcp port 80</code></p>
+    <p>— Display Filters: Apply after capturing → refine view</p>
+    <p>Example: <code>http.request.method == GET</code></p>
+
+    <h2>USEFUL FILTER EXAMPLES</h2>
+    <h3>Capture Filters</h3>
+    <p><code>host x.x.x.x</code></p>
+    <p><code>net x.x.x.x/24</code></p>
+    <p><code>port 80</code></p>
+    <p><code>not port 443</code></p>
+
+    <h3>Display Filters</h3>
+    <p><code>ip.src == x.x.x.x</code></p>
+    <p><code>tcp.port == 443</code></p>
+    <p><code>dns / ftp / arp</code></p>
+    <p><code>tcp.port != 22</code></p>
+
+    <h2>WIRESHARK STATISTICS</h2>
+    <p>— Shows top talkers, protocol breakdowns, conversations, and detailed traffic reports.</p>
+
+    <h2>FOLLOWING TCP STREAMS</h2>
+    <p>— Reconstructs entire TCP conversations (text, images, files).</p>
+    <p>— Right-click packet → Follow → TCP Stream.</p>
+
+    <h2>CONCLUSION</h2>
+    <p>— Network traffic analysis is essential for security, troubleshooting, and monitoring.</p>
+    <p>— Tools like Wireshark provide deep inspection and targeted filtering for effective analysis.</p>
+
+</div>
+
+</body>
+</html>

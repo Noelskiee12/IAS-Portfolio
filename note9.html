@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Notes - Event Logs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Notes</a>
+    <a href="contact.html">Contact Info</a>
+</nav>
+
+<div class="note-content">
+
+    <img src="images/note9.jpg" alt="Note1">
+
+    <h1>AIS NOTES</h1>
+
+    <h2> INTRODUCTION TO EVENT LOGS</h2>
+
+    <h3>What Are Event Logs?</h3>
+    <p>— Records of significant system actions or events.</p>
+    <p>— Stored automatically by software systems.</p>
+    <p>— Serve as a digital history of system activity.</p>
+
+    <h3>Importance of Logs in Security</h3>
+    <p>— Monitor workstation and endpoint activity.</p>
+    <p>— Track attacks and unauthorized access.</p>
+    <p>— Help in incident investigation & audits.</p>
+    <p>— Enable event correlation across systems.</p>
+
+    <h3>Key Parts of a Log Entry</h3>
+    <p>— Timestamp: when the event happened.</p>
+    <p>— Source: system or application that created the log.</p>
+    <p>— Event Type: login, file access, error, etc.</p>
+    <p>— Details: user, IP address, device, outcome.</p>
+
+    <h3>Power of Log Correlation</h3>
+    <p>— Single logs have limited value.</p>
+    <p>— Combined logs show:</p>
+    <p>What happened, when, where, who caused it, and result/outcome.</p>
+    <p>— Used to reconstruct attack chains (e.g., brute-force login attacks).</p>
+
+    <h3>Common Log Types</h3>
+    <p>— Application Logs: app errors, warnings.</p>
+    <p>— Audit Logs: compliance-related activity.</p>
+    <p>— Security Logs: logins, permission changes.</p>
+    <p>— System Logs: OS, hardware, kernel events.</p>
+    <p>— Network Logs: traffic & connections.</p>
+    <p>— Web Server Logs: URL requests & responses.</p>
+
+    <h3>Log Formats</h3>
+    <p>— Structured: machine-readable format.</p>
+    <p>— Semi-structured: mixed format.</p>
+    <p>— Unstructured: free text, hard to analyze.</p>
+
+    <h3>Log Collection & Centralization</h3>
+    <p>— Logs gathered from different systems.</p>
+    <p>— Time sync (NTP) is critical for accuracy.</p>
+    <p>— Stored in central systems (SIEM).</p>
+    <p>— Examples: Splunk, Elastic, IBM QRadar, Azure Sentinel.</p>
+
+    <h3>Windows Event Logs</h3>
+    <p>— Stored in <code>.evt</code> / <code>.evtx</code>.</p>
+    <p>— Located at: <code>C:\Windows\System32\winevt\Logs</code></p>
+    <p>— Converted to XML for viewing.</p>
+    <p>— Standard Windows Log Types:</p>
+    <p>System: services, hardware (e.g., Event ID 7045)</p>
+    <p>Security: logins, attacks</p>
+    <p>Application: app crashes</p>
+    <p>— Log Entry Elements: Level, Time, Source, Event ID, Task Category, Details (XML)</p>
+
+    <h3>Windows Log Tools</h3>
+    <p>— Event Viewer: graphical viewer.</p>
+    <p>— Wevtutil.exe: command-line tool.</p>
+    <p>— Get-WinEvent: PowerShell log analysis.</p>
+
+    <h3>Key Takeaways</h3>
+    <p>— Logs are the primary forensic evidence of cyber activity.</p>
+    <p>— SIEM systems analyze and correlate logs.</p>
+    <p>— Windows Event Logs act as a system flight recorder.</p>
+    <p>— Essential for cybersecurity investigations.</p>
+
+</div>
+
+</body>
+</html>

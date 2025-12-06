@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Notes - CWE-89 SQL Injection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Notes</a>
+    <a href="contact.html">Contact Info</a>
+</nav>
+
+<div class="note-content">
+
+    <img src="images/note4.jpg" alt="Note1">
+
+    <h1>AIS NOTES</h1>
+
+    <h2>CWE-89: SQL INJECTION</h2>
+    <p>— Attack where malicious SQL is inserted into input fields to manipulate database queries, allowing data theft, modification, or deletion and possible full system compromise.</p>
+
+    <h2>IMPACT AND CONSEQUENCES</h2>
+    <p>— Data breaches, unauthorized data modification, loss of integrity, leaked credentials, financial/legal penalties, reputational damage, and potential full takeover of the application or backend systems.</p>
+
+    <h2>MITIGATION STRATEGIES</h2>
+    <p>— Use parameterized queries, input validation, least-privilege DB accounts, stored procedures, escaping where needed, web application firewalls, regular code reviews, and security testing (SAST/DAST/penetration tests).</p>
+
+    <h3>Prepared Statements</h3>
+    <p>— Queries where SQL and data are separated; placeholders are used for inputs so the database treats them as data, not code.</p>
+    <p>Example: <code>SELECT * FROM users WHERE id = ?</code></p>
+
+    <h3>Input Validation</h3>
+    <p>— Check and restrict user input by type, length, format, and allowed characters. Prefer allowlists over deny lists. Reject or sanitize invalid input before it reaches the database.</p>
+
+    <h3>Stored Procedures</h3>
+    <p>— Predefined database routines that encapsulate logic and reduce dynamic SQL use. Effective if implemented safely, but still require parameterization and proper privileges.</p>
+
+    <h3>Escaping User-Supplied Input</h3>
+    <p>— Replace or prefix special SQL characters so input cannot close literals or inject SQL. Use only as a last resort — parameterized queries are safer and preferred.</p>
+
+</div>
+
+</body>
+</html>
