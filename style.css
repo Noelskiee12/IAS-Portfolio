@@ -1,4 +1,3 @@
-/* RESET */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -6,7 +5,6 @@ body {
     color: #333;
 }
 
-/* NAVBAR */
 nav {
     background: #333;
     padding: 15px 0;
@@ -25,7 +23,6 @@ nav a:hover {
     color: #ffcc00;
 }
 
-/* CENTER CONTENT FOR NON-PORTFOLIO PAGES */
 .center-section {
     display: flex;
     flex-direction: column;
@@ -34,14 +31,12 @@ nav a:hover {
     padding: 50px 20px;
 }
 
-/* BANNER */
 .banner img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-/* HOME PAGE */
 .home-container {
     display: flex;
     align-items: center;
@@ -60,7 +55,6 @@ nav a:hover {
     font-size: 20px;
 }
 
-/* ABOUT ME */
 .about-wrapper {
     display: flex;
     justify-content: center;
@@ -87,7 +81,6 @@ nav a:hover {
     font-size: 18px;
 }
 
-/* PORTFOLIO GRID */
 .notes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -136,7 +129,6 @@ nav a:hover {
     background: #555;
 }
 
-/* NOTE CONTENT PAGE */
 .note-content {
     max-width: 800px;
     margin: 50px auto;
@@ -153,3 +145,4 @@ nav a:hover {
     float: left;
     margin-right: 20px;
 }
+
